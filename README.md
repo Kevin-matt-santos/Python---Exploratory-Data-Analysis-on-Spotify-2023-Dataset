@@ -3,14 +3,14 @@
 ## About Project
 In this Project you will perform an Exploratory Data Analysis (EDA) on an Dataset containing information of popular tracks on Most Streamed Spotify Songs 2023 (https://www.kaggle.com/datasets/nelgiriyewithana/top-spotify-songs-2023). This task aims to analyze, visualize, and to intrepret data to both obtain and learn new valuable insights. 
 
-## Objectives
-1. Overview of Dataset
-2. Basic Descriptive Statistics
-3. Top Performers
-4. Temporal Trends
-5. Genre and Music Characteristics
-6. Platform Popularity
-7. Advanced Analysis
+## Objectives of Project
+- Overview of Dataset
+- Basic Descriptive Statistics
+- Top Performers
+- Temporal Trends
+- Genre and Music Characteristics
+- Platform Popularity
+- Advanced Analysis
 
 ## Codes Used
 Note: Before Starting, download the file through the link then place the file in the same folder as your Jupyter notebook to be able to load the Data Frame
@@ -308,28 +308,48 @@ Note: If you wish to see the excat number of tracks in each year, visit my Jupyt
 
 ### Genre and Music Characteristics
 - Examine the correlation between streams and musical attributes like bpm, danceability_%, and energy_%. Which attributes seem to influence streams the most?
+<img width="160" alt="image" src="https://github.com/user-attachments/assets/d71e6033-5e0f-4a89-9bea-c4ade91fdc93">
 
+**Explanation:** It can be seen that the only factors that can be seen to have an influence in the streams is danceability and speechiness even though its low, the rest of the factros don't really have an affect on the streams. 
 
-  
 - Is there a correlation between danceability_% and energy_%? How about valence_% and acousticness_%?
+<img width="391" alt="image" src="https://github.com/user-attachments/assets/98d19624-eeeb-4ffd-b3b6-106c03a93a2d">
+
+**Explanation:** There is a small correlation between danceability_% and energy_% though its a positive correlation, it looks to have an weak relationship. Meanwhile valence_% and acousticness_% have a weak negative correlation which means the higher valence, have a low acousticness however the relationship is weak. 
+
 
 ### Platform Popularity
 - How do the numbers of tracks in spotify_playlists, spotify_charts, and apple_playlists compare? Which platform seems to favor the most popular tracks?
+<img width="317" alt="image" src="https://github.com/user-attachments/assets/9f070be4-29c9-4dc5-9213-5076de067d49">
+
+**Explanation:** It can be seen from the data above that the number of tracks in spotify playlist is the most popular platform with 4,955,719 tracks, while the number of tracks in deezer playlist comes in second then finally the number of tracks in the apple playlist being last. 
 
 
 ### Advanced Analysis
 - Based on the streams data, can you identify any patterns among tracks with the same key or mode (Major vs. Minor)?
+<img width="428" alt="image" src="https://github.com/user-attachments/assets/12f53207-3d61-48e3-a938-0e68ef5b93f2">
+<img width="232" alt="image" src="https://github.com/user-attachments/assets/d4968325-ab23-4723-b05d-da2115a0124a">
 
+**Explanation:** It can be seen from the data above that the most popular key is E Major with 7.605963e+08 streams while the least popular is G# minor with 3.219036e+08. There was no observed patterns that can be seen from the data. 
 
 - Do certain genres or artists consistently appear in more playlists or charts? Perform an analysis to compare the most frequently appearing artists in playlists or charts.
+<img width="416" alt="image" src="https://github.com/user-attachments/assets/7f8ab7c8-69b8-4cea-9708-e320572e163f">
+
+**Explanation:** It can be observed that the Weekend is the most frequent artist being played in all platforms with an total of 150,273.0 plays, following Taylor swift and Ed Sheeran. This Code only shows the top 5 you can edit if you wish to. 
+
+## Insights and Learnings 
+  In the start of the coding it was difficult to load the dataset however after reaserching it was discovered that 'encoding = latin1' can be used to load the dataset to read the file correctly. In exploring the data frame it was obserevd that some values were considered errors so they were assignend to be 'coerce' so that they can be skipped and the data will resume running without any problems. It can be seen using the code at "Finding the mean, median, and standard deviation of the Streams column". Other than that other codes can be seen in the study lecture materials. Using a variaty of seaborn codes to present data in a graphical way to better visualise and compare each data or factor. 
+
+  Overall, This porject was difficult and challenging for me however as i progressed in the work i learned and have gained knowledge when it comes to programming and have no doubt that in the future this knowledge will be used in my future profession. 
 
 
-## Insights 
-
-
-## Sources 
+## Sources and Study References 
 - ECE2112 Lecture Materials
-
+- PYTHON PANDAS TUTORIAL #9 - HOW TO USE VALUE_COUNTS METHOD IN PANDAS. (https://www.youtube.com/watch?v=iYollp0FE_E )
+- How to use groupby() to group categories in a pandas DataFrame (https://www.youtube.com/watch?v=ipoSjrN0oh0)
+- 35 - Pandas - pandas.to_numeric() Method (https://www.youtube.com/watch?v=DrQzwmPr8Ts)
+- Seaborn distplot | Seaborn distplot interpretation and how to make a distribution plot in seaborn (https://www.youtube.com/watch?v=fJoR3QsfXa0)
+- Seaborn Tutorial : Seaborn Full Course (https://www.youtube.com/watch?v=6GUZXDef2U0)
 
 ## Author 
 Kevin Matthew L. Santos

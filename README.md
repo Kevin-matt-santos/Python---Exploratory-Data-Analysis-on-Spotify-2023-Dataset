@@ -394,5 +394,3 @@ It can be observed that the Weekend is the most frequent artist being played in 
 - Seaborn distplot | Seaborn distplot interpretation and how to make a distribution plot in seaborn (https://www.youtube.com/watch?v=fJoR3QsfXa0)
 - Seaborn Tutorial : Seaborn Full Course (https://www.youtube.com/watch?v=6GUZXDef2U0)
 
-## Author 
-Kevin Matthew L. Santos

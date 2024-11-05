@@ -26,7 +26,7 @@ In this Project you will perform an Exploratory Data Analysis (EDA) on an Datase
 - Do certain genres or artists consistently appear in more playlists or charts? Perform an analysis to compare the most frequently appearing artists in playlists or charts.
 
 
-## Codes Used and Ouput 
+## Codes Used, Ouput and Analysis
 Note: Before Starting, download the file through the link then place the file in the same folder as your Jupyter notebook to be able to load the Data Frame
 
 1. Importing all Libraries 

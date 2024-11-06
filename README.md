@@ -48,12 +48,14 @@ spotify
 <img width="672" alt="image" src="https://github.com/user-attachments/assets/e9e85066-d44a-4e89-8f8f-c424581e5017">
 
 
-3. Finding how many (rows,columns) is in the dataset
+3. Finding how many rows and columns does the dataset contain
 ``` python
 #Finding out how many rows and columns are there in the dataset (rows,columns)
 spotify.shape
 ```
-<img width="70" alt="image" src="https://github.com/user-attachments/assets/567f3266-c72e-4605-a380-c175f657b6a5">
+<img width="122" alt="image" src="https://github.com/user-attachments/assets/63bfc4ba-467f-4ccd-b665-a6e7fa4cb6d8">
+
+- Using the <ins>.shape</ins> code I was able to identify how many (rows,columns) there is in the dataset which contains 953 rows and 24 columns. 
 
 
 4. Identifying the data type of each column 
@@ -63,6 +65,7 @@ spotify.info()
 ```
 <img width="272" alt="image" src="https://github.com/user-attachments/assets/79e4bf36-870a-412d-9c10-f3e8a602049a">
 
+- Using the <ins>.info()</ins> I was able to identify that there are 2 data types which are int64() and object() in the dataset.
 
 5. Identifying if there are any Error(Null) Values in the dataset 
 ``` python
@@ -70,6 +73,8 @@ spotify.info()
 pd.isnull(spotify).sum()
 ```
 <img width="212" alt="image" src="https://github.com/user-attachments/assets/c308b8d7-6f12-47b1-b7d6-37003648c703">
+
+- Using <ins>.isnull()</ins> to identify if there are any null values and it was discovered that the key had 95 while in_shazam_charts had 50.
 
 6. Finding the mean, median, and standard deviation of the Streams column
 ```python
@@ -88,8 +93,9 @@ print(f"Standard deviation: {c}")
 ```
 <img width="331" alt="image" src="https://github.com/user-attachments/assets/d332ab92-09d0-4114-8ba5-45e3f4902dbf">
 
+- Using the code I was able to get the mean, median, and standard deviation of the streams column. However I had to use "errors = coerce" since it was observed that without it the code would not run. 
 
-7. Finding the dsitribution of released_year vs artist_count
+7. What is the distribution of released_year and artist_count? Are there any noticeable trends or outliers?
 ```python
 #Creating an Distribution plot for the released_year column with the color Red
 sns.displot(spotify['released_year'], kde = False, color = '#FF0000')
@@ -133,6 +139,8 @@ plt.show()
  <img width="350" alt="image" src="https://github.com/user-attachments/assets/bfab0a6e-08ba-4fc0-b487-8f4c52952472">
  <img width="354" alt="image" src="https://github.com/user-attachments/assets/67195c94-91ec-4c30-934f-d206ca3d4ad2">
 
+- After running the code it was noticable that at the start there were only few artist posting songs however as the years go by more artist starts to release more songs and do collabs. 
+
 8. The Top 5 most Streamed Tracks
 ```python
 # Sorting the column 'streams' from highest to lowest and choosing the first five rows
@@ -144,6 +152,7 @@ top_streamed_tracks
 ```
 <img width="707" alt="image" src="https://github.com/user-attachments/assets/871e3bef-ca5b-4ee4-adb2-e9b336b2fbdc">
 
+- This shows the Top 5 most streamed Song and it can be seen that "The Weekend" is top 1. 
 
 9. Top 5 most Frequent Artists
 ```python
@@ -154,6 +163,8 @@ print("\nTop 5 most frequent artists:")
 top_artist
 ```
 <img width="173" alt="image" src="https://github.com/user-attachments/assets/74fe74b3-3b44-4215-8c80-15d0b01ee220">
+
+- This data shows the Top 5 most Frequent artists based on the number of tracks and it is obsereved that 'Taylor Swift' is first. 
 
 
 10. Number of tracks Released Yearly 
@@ -180,6 +191,7 @@ plt.show()
 ```
 <img width="691" alt="image" src="https://github.com/user-attachments/assets/3e386d94-1f78-49d1-8a2e-43536ddbe1ba">
 
+- It was observed that 2022 had the most tracks released in a year. As it can be seen in the graph above.
 
 11. Number of tracks released per month
 ```python
@@ -205,6 +217,7 @@ plt.show()
 ```
 <img width="383" alt="image" src="https://github.com/user-attachments/assets/98397f0a-472b-479e-a641-b1634614490f">
 
+- It was observed that January had the most tracks in a month and there are no any noticeable patterns between the release of tracks per month.
 
 12. The correlation between streams and musical attributes
 ```python
@@ -221,6 +234,7 @@ print (correl_streams)
 ```
 <img width="207" alt="image" src="https://github.com/user-attachments/assets/c97e2ce3-33de-4ac0-9ff6-717f21fba82c">
 
+- It can be seen that the only factors that can be seen to have an influence in the streams is danceability and speechiness though its low and have a little effect while the rest of the factros don't really have an effect on the streams.
 
 13. Correlation between danceability_% vs energy_% and about valence_% vs acousticness_%
 ```python
@@ -236,6 +250,7 @@ print (val_acous)
 ```
 <img width="434" alt="image" src="https://github.com/user-attachments/assets/3213a5d7-fcf9-4d32-9a64-7578caec09da">
 
+- There is a small correlation between danceability_% and energy_% though its a positive correlation, it looks to have an weak relationship. Meanwhile valence_% and acousticness_% have a weak negative correlation which means the higher valence, have a low acousticness however the relationship is weak.
 
 14. The numbers of tracks in spotify_playlists, deezer_playlist, and apple_playlists
 ``` python
@@ -251,6 +266,7 @@ print ("The number of tracks in apple playlist is:", count_apple_playlists)
 ```
 <img width="287" alt="image" src="https://github.com/user-attachments/assets/4ed37f2c-004b-494b-a094-597952c9bf2a">
 
+- It can be seen from the data above that the number of tracks in spotify playlist is the most popular with the platform with 4,955,719 tracks, while the number of tracks in deezer playlist comes in second then finally the number of tracks in the apple playlist being last.
 
 15. Stream data, identify pattern same key or mode (Major vs. Minor)
 ``` python
@@ -268,6 +284,8 @@ sns.barplot(x = 'key', y = 'streams', hue = 'mode', data = stream, palette = col
 plt.show()
 ```
 <img width="403" alt="image" src="https://github.com/user-attachments/assets/7585a03f-370c-4d69-b191-fb8b677b3571">
+
+- It can be seen from the data above that the most popular key is E Major while the least popular is G# minor. There was no observed patterns that can be seen from the data.
 
 16. Most frequently appearing artists in playlists or charts
 ``` python
@@ -293,92 +311,10 @@ plt.show()
 ```
 <img width="464" alt="image" src="https://github.com/user-attachments/assets/e720206b-dcce-4bcf-8ff3-28cd006d9587">
 
+- It can be observed that 'the Weekend' is the most frequent artist being played in all platforms with an total of 150,273.0 plays. This code only shows the top 5 due to the code using <ins>.head</ins>. 
 
-## Their Ouputs and Analysis
+### Note: View my Jupyternotebook which can be seen in the same repository to see the excat data for all problems above. 
 
-### Overview of Dataset
-1. How many rows and columns does the dataset contain?
-<img width="520" alt="image" src="https://github.com/user-attachments/assets/80f4452a-9e08-4f02-916a-7c1736fe86bc">
-
-  Using the <ins>.shape</ins> code we are able to identify how many (rows,columns) there is in the dataset. 
-
-2. What are the data types of each column? Are there any missing values?
-<img width="237" alt="image" src="https://github.com/user-attachments/assets/72b6e927-00f2-4cb6-bbba-31989910139a">
-<img width="176" alt="image" src="https://github.com/user-attachments/assets/7b2b9e93-e1e5-47f3-9e19-1aab60552e7f">
-
-Using the <ins>.info()</ins> we were able to identify that there are 2 data types int64() and object() in the dataset. At the same time using <ins>.isnull()</ins> to identify if there are any null values and it was discovered that the key had 95 while in_shazam_charts had 50. 
-
-
-### Basic Descriptive Statistics
-3. What are the mean, median, and standard deviation of the streams column?
-<img width="298" alt="image" src="https://github.com/user-attachments/assets/c6cfa5f1-8d74-429e-af69-ab757bdaa0f2">
-
-Using the code we were able to get the mean, median, and standard deviation of the streams column. 
-
-4. What is the distribution of released_year and artist_count? Are there any noticeable trends or outliers?
- <img width="343" alt="image" src="https://github.com/user-attachments/assets/f85d94b9-1e8c-477b-beac-1dfcf5d429da">
- <img width="350" alt="image" src="https://github.com/user-attachments/assets/bfab0a6e-08ba-4fc0-b487-8f4c52952472">
- <img width="354" alt="image" src="https://github.com/user-attachments/assets/67195c94-91ec-4c30-934f-d206ca3d4ad2">
-
-After running the code it was noticable that as the years go by more artist starts to release more songs and do more collabs.
-
-
-### Top Performers
-5. Which track has the highest number of streams? Display the top 5 most streamed tracks.
-<img width="547" alt="image" src="https://github.com/user-attachments/assets/b775f892-1e52-4cbd-aa09-566e644d323d">
-
-This shows the Top 5 most streamed Songs
-
-6. Who are the top 5 most frequent artists based on the number of tracks in the dataset?
-<img width="200" alt="image" src="https://github.com/user-attachments/assets/79c1b598-2756-40ef-b1b3-5b384516508a">
-
-This shows the Top 5 most Frequent artists based on the number of tracks
-
-
-###  Temporal Trends
-7. Analyze the trends in the number of tracks released over time. Plot the number of tracks released per year.
-<img width="691" alt="image" src="https://github.com/user-attachments/assets/81ba4a76-a9c9-43c1-a9d9-b861846064d6">
-
-
-It was observed that 2022 had the most tracks released in a year. As it can be seen in the graph above.
-Note: If you wish to see the excat number of tracks in each year, visit my Jupyternotebook which can be seen in the same repository. 
-
-8. Does the number of tracks released per month follow any noticeable patterns? Which month sees the most releases?
-<img width="337" alt="image" src="https://github.com/user-attachments/assets/e0b3009a-7379-4ce4-9b61-7cc1957aa5f0">
-
-It was observed that January had the most tracks in a month and there were no any noticeable patterns between the tracks releases per month. 
-
-
-### Genre and Music Characteristics
-9. Examine the correlation between streams and musical attributes like bpm, danceability_%, and energy_%. Which attributes seem to influence streams the most?
-<img width="160" alt="image" src="https://github.com/user-attachments/assets/d71e6033-5e0f-4a89-9bea-c4ade91fdc93">
-
-It can be seen that the only factors that can be seen to have an influence in the streams is danceability and speechiness even though its low, the rest of the factros don't really have an affect on the streams. 
-
-10. Is there a correlation between danceability_% and energy_%? How about valence_% and acousticness_%?
-<img width="391" alt="image" src="https://github.com/user-attachments/assets/98d19624-eeeb-4ffd-b3b6-106c03a93a2d">
-
-There is a small correlation between danceability_% and energy_% though its a positive correlation, it looks to have an weak relationship. Meanwhile valence_% and acousticness_% have a weak negative correlation which means the higher valence, have a low acousticness however the relationship is weak. 
-
-
-### Platform Popularity
-11. How do the numbers of tracks in spotify_playlists, spotify_charts, and apple_playlists compare? Which platform seems to favor the most popular tracks?
-<img width="317" alt="image" src="https://github.com/user-attachments/assets/9f070be4-29c9-4dc5-9213-5076de067d49">
-
-It can be seen from the data above that the number of tracks in spotify playlist is the most popular platform with 4,955,719 tracks, while the number of tracks in deezer playlist comes in second then finally the number of tracks in the apple playlist being last. 
-
-
-### Advanced Analysis
-12. Based on the streams data, can you identify any patterns among tracks with the same key or mode (Major vs. Minor)?
-<img width="428" alt="image" src="https://github.com/user-attachments/assets/12f53207-3d61-48e3-a938-0e68ef5b93f2">
-<img width="232" alt="image" src="https://github.com/user-attachments/assets/d4968325-ab23-4723-b05d-da2115a0124a">
-
-It can be seen from the data above that the most popular key is E Major with 7.605963e+08 streams while the least popular is G# minor with 3.219036e+08. There was no observed patterns that can be seen from the data. 
-
-13. Do certain genres or artists consistently appear in more playlists or charts? Perform an analysis to compare the most frequently appearing artists in playlists or charts.
-<img width="416" alt="image" src="https://github.com/user-attachments/assets/7f8ab7c8-69b8-4cea-9708-e320572e163f">
-
-It can be observed that the Weekend is the most frequent artist being played in all platforms with an total of 150,273.0 plays, following Taylor swift and Ed Sheeran. This Code only shows the top 5 you can edit if you wish to. 
 
 ## Insights and Learnings 
   In the start of the coding it was difficult to load the dataset however after reaserching it was discovered that 'encoding = latin1' can be used to load the dataset to read the file correctly. In exploring the data frame it was obserevd that some values were considered errors so they were assignend to be 'coerce' so that they can be skipped and the data will resume running without any problems. It can be seen using the code at "Finding the mean, median, and standard deviation of the Streams column". Other than that other codes can be seen in the study lecture materials. Using a variaty of seaborn codes to present data in a graphical way to better visualise and compare each data or factor.
